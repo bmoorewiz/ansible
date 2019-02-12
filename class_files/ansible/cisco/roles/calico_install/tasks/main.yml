@@ -1,3 +1,0 @@
-- name: install calico
-  become: no
-  command: kubectl apply -f https://docs.projectcalico.org/master/getting-started/kubernetes/installation/hosted/calico.yaml

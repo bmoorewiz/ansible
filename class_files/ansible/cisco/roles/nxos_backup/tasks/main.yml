@@ -1,5 +1,0 @@
-- name: take backup of config
-  nxos_config:
-    backup: yes
-    username: admin
-    password: admin

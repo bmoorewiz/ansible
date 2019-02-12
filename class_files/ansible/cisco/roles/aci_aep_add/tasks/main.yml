@@ -1,9 +1,0 @@
-- name: Add AEP Policy
-  aci_aep:
-    hostname: 10.207.10.100
-    username: "{{ user }}"
-    password: "{{ password }}"
-    aep: ANS_AEP
-    description: "AEP Created by Ansible"
-    validate_certs: no
-    state: present

@@ -1,8 +1,0 @@
-- name: Verify Config against master
-  nxos_config:
-    diff_against: intended
-    intended_config: "{{ lookup('file', 'Dist1') }}"
-    username: admin
-    password: admin
-    transport: cli
-  register: test_diff

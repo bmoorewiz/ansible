@@ -1,8 +1,0 @@
-- name: Remove MCP Policy
-  aci_interface_policy_mcp:
-    hostname: 10.207.10.100
-    username: "{{ user }}"
-    password: "{{ password }}"
-    mcp: ANS_MCP_Enable
-    validate_certs: no
-    state: absent

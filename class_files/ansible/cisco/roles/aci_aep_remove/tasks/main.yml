@@ -1,8 +1,0 @@
-- name: Remove AEP Policy
-  aci_aep:
-    hostname: 10.207.10.100
-    username: "{{ user }}"
-    password: "{{ password }}"
-    aep: ANS_AEP
-    validate_certs: no
-    state: absent

@@ -1,8 +1,0 @@
-- name: Remove LACP Policy  
-  aci_interface_policy_port_channel:
-    hostname: 10.207.10.100
-    username: "{{ user }}"
-    password: "{{ password }}"
-    port_channel: ANS_LACP_Enable
-    validate_certs: no
-    state: absent

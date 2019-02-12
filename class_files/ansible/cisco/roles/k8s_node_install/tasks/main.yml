@@ -1,2 +1,0 @@
-- name: install k8s on all nodes and connect to master
-  shell: '/tmp/workerinstall.txt' 

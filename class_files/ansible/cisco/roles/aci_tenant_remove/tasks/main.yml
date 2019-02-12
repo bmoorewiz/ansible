@@ -1,8 +1,0 @@
-- name: Removing Tenant tenant
-  aci_tenant:
-    hostname: 10.207.10.100
-    username: "{{ user }}"
-    password: "{{ password }}"
-    tenant: "{{ tenant_name }}"
-    validate_certs: no
-    state: absent

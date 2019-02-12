@@ -1,5 +1,0 @@
-- name: install k8s dashboard
-  command: kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/master/src/deploy/recommended/kubernetes-dashboard.yaml
-- name:  add cluster role for k8s dashboard
-  command: kubectl apply -f /Users/sboots/Desktop/Desktop\ -\ USHMUNB46806/GitHub/Ansible/roles/kube_dashboard/k8sdashboard_cluster_role.yaml
-  

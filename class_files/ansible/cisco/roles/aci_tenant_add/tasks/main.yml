@@ -1,9 +1,0 @@
-- name: Add a new tenant
-  aci_tenant:
-    hostname: 10.207.10.100
-    username: "{{ user }}"
-    password: "{{ password }}"
-    tenant: "{{ tenant_name }}"
-    description: "{{ tenant_name }} tenant"
-    validate_certs: no
-    state: present
