@@ -1,0 +1,59 @@
+- name: Add 10G Link Level Policies
+  aci_rest:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    validate_certs: no
+    path: /api/mo/uni/infra.json
+    method: post
+    content:
+      fabricHIfPol:
+        attributes:
+          name: ANS_10G_Auto
+          descr: "10G Auto created by Ansible"
+          speed: 10G
+
+- name: Add 1G Link Level Policies
+  aci_rest:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    validate_certs: no
+    path: /api/mo/uni/infra.json
+    method: post
+    content:
+      fabricHIfPol:
+        attributes:
+          name: ANS_1G_Auto
+          descr: "1G Auto created by Ansible"
+          speed: 1G
+
+- name: Add 40G Link Level Policies
+  aci_rest:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    validate_certs: no
+    path: /api/mo/uni/infra.json
+    method: post
+    content:
+      fabricHIfPol:
+        attributes:
+          name: ANS_40G_Auto
+          descr: "40G Auto created by Ansible"
+          speed: 40G
+
+- name: Add 25G Link Level Policies
+  aci_rest:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    validate_certs: no
+    path: /api/mo/uni/infra.json
+    method: post
+    content:
+      fabricHIfPol:
+        attributes:
+          name: ANS_25G_Auto
+          descr: "25G Auto created by Ansible"
+          speed: 25G

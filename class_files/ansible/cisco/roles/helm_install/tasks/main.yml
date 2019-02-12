@@ -1,0 +1,13 @@
+- name: install helm
+  homebrew:
+    name: kubernetes-helm
+    state: present
+    update_homebrew: yes
+- name: add the pure helm charts for the pure volume flex driver
+  command:  helm repo add pure https://purestorage.github.io/helm-charts
+- name: update helm repo
+  command: helm repo update
+- name: intialize helm
+  command: helm init
+- name: create cluster role binding
+  command: kubectl create clusterrolebinding add-on-cluster-admin --clusterrole=cluster-admin --serviceaccount=kube-system:default

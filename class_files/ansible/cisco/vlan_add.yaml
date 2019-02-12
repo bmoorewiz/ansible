@@ -1,0 +1,26 @@
+
+---
+#- hosts: localhost
+#  connection: local
+#  roles:
+#    - known_hosts
+
+- hosts: ioshosts
+  vars_prompt:
+    - name: "vlan_id"
+      prompt: "What VLAN do you want to create on IOS Hosts?"
+      private: no
+  gather_facts: no
+  connection: local
+  roles:
+    - ios_vlan_add
+  
+- hosts: nxoshosts
+  vars_prompt:
+    - name: "vlan_id"
+      prompt: "What VLAN do you want to create on NXOS Hosts?"
+      private: no
+  gather_facts: no
+  connection: local
+  roles:
+    - nxos_vlan_add

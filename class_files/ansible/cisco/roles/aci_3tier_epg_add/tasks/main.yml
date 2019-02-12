@@ -1,0 +1,40 @@
+- name: Add a new EPG 1
+  aci_epg:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_name }}"
+    ap: "{{ ap_name }}"
+    epg: "{{ epg1_name }}"
+    bd: "{{ bd_name }}"
+    state: present
+    validate_certs: no 
+#  delegate_to: localhost
+
+- name: Add a new EPG 2
+  aci_epg:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_name }}"
+    ap: "{{ ap_name }}"
+    epg: "{{ epg2_name }}"
+    bd: "{{ bd_name }}"
+    state: present
+    validate_certs: no
+#  delegate_to: localhost
+
+- name: Add a new EPG 3
+  aci_epg:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_name }}"
+    ap: "{{ ap_name }}"
+    epg: "{{ epg3_name }}"
+    bd: "{{ bd_name }}"
+    state: present
+    validate_certs: no
+#  delegate_to: localhost
+
+

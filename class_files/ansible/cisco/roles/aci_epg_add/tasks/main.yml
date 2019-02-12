@@ -1,0 +1,11 @@
+- name: Add a new EPG
+  aci_epg:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_name }}"
+    ap: "{{ ap }}"
+    epg: "{{ epg_name }}"
+    bd: "{{ bd_name }}"
+    validate_certs: no
+    state: present

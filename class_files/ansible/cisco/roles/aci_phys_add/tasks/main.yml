@@ -1,0 +1,9 @@
+- name: Add Physical Domain
+  aci_domain:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    domain: ANS_Phys
+    domain_type: phys
+    validate_certs: no
+    state: present

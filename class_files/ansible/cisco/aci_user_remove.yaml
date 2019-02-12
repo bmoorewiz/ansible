@@ -1,0 +1,21 @@
+---
+#- hosts: localhost
+#  connection: local
+#  roles:
+#    - known_hosts
+
+- hosts: apic
+  vars_prompt:
+    - name: "user"
+      prompt: "Username"
+      private: no
+    - name: "password"
+      prompt: "Password"
+      private: yes
+    - name: "new_user"
+      prompt: "Username to Remove"
+      private: no
+  gather_facts: no
+  connection: local
+  roles:
+    - aci_user_remove

@@ -1,0 +1,7 @@
+- name: pause for tiller container to install
+  pause:
+    seconds: 60
+
+- name: install pure storage driver
+  command: helm install --name pure-storage-driver pure/pure-k8s-plugin -f /Users/sboots/Desktop/Desktop\ -\ USHMUNB46806/GitHub/Ansible/roles/pure_storage_driver_install/values.yaml
+

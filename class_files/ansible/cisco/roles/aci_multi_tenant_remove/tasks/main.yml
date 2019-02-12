@@ -1,0 +1,90 @@
+- name: Remove tenant 1
+  aci_tenant:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_1 }}"
+    description: "{{ tenant_1 }} tenant"
+    validate_certs: no
+    state: absent
+- name: Remove tenant 2
+  aci_tenant:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_2 }}"
+    description: "{{ tenant_2 }} tenant"
+    validate_certs: no
+    state: absent
+- name: Remove tenant 3
+  aci_tenant:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_3 }}"
+    description: "{{ tenant_3 }} tenant"
+    validate_certs: no
+    state: absent
+- name: Remove tenant 4
+  aci_tenant:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_4 }}"
+    description: "{{ tenant_4 }} tenant"
+    validate_certs: no
+    state: absent
+- name: Remove tenant 5
+  aci_tenant:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_5 }}"
+    description: "{{ tenant_5 }} tenant"
+    validate_certs: no
+    state: absent
+- name: Remove tenant 6
+  aci_tenant:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_6 }}"
+    description: "{{ tenant_6 }} tenant"
+    validate_certs: no
+    state: absent
+- name: Remove tenant 7
+  aci_tenant:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_7 }}"
+    description: "{{ tenant_7 }} tenant"
+    validate_certs: no
+    state: absent
+- name: Remove tenant 8
+  aci_tenant:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_8 }}"
+    description: "{{ tenant_8 }} tenant"
+    validate_certs: no
+    state: absent
+- name: Remove tenant 9
+  aci_tenant:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_9 }}"
+    description: "{{ tenant_9 }} tenant"
+    validate_certs: no
+    state: absent
+- name: Remove tenant 10
+  aci_tenant:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_10 }}"
+    description: "{{ tenant_10 }} tenant"
+    validate_certs: no
+    state: absent

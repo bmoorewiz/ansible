@@ -1,0 +1,10 @@
+- name: Querying Tenant
+  aci_tenant:
+    host: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_name }}"
+    state: query
+  delegate_to: localhost
+  validate_certs: no
+  register: query_result

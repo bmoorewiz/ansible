@@ -1,0 +1,13 @@
+- name: create directory structure for config file
+  file:
+    path: ~/.kube
+    state: directory
+    mode: 0755
+- name: update kube config on localhost
+  command: scp sysadmin@10.207.61.70:/home/sysadmin/.kube/config /tmp
+- name: move config to home dir
+  copy:
+    src: /tmp/config
+    dest: ~/.kube
+    mode: 0755
+  

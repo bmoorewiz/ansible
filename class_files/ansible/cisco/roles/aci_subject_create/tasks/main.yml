@@ -1,0 +1,27 @@
+- name: Create a subject
+  aci_contract_subject:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_name }}"
+    contract: "{{ contract_name }}"
+    subject: "{{ subject_name }}"
+    reverse_filter: yes
+    priority: level1
+    dscp: unspecified
+    state: present
+    validate_certs: no
+  register: query_results
+
+- name: Create a subject to filter relationship
+  aci_contract_subject_to_filter:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_name }}"
+    contract: "{{ contract_name }}"
+    subject: "{{ subject_name }}"
+    filter: "{{ filter_name }}"
+    state: present
+    validate_certs: no 
+#  delegate_to: localhost

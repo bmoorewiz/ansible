@@ -1,0 +1,29 @@
+- name: Add CDP Enable Policy
+  aci_rest:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    validate_certs: no
+    method: post
+    path: /api/mo/uni/infra.json
+    content:
+       cdpIfPol:
+         attributes:
+           name: ANS_CDP_Enable
+           descr: "CDP Enabled created by Ansible"
+           adminSt: enabled
+
+- name: Add CDP Disable Policy
+  aci_rest:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    validate_certs: no
+    method: post
+    path: /api/mo/uni/infra.json
+    content:
+       cdpIfPol:
+         attributes:
+           name: ANS_CDP_Disable
+           descr: "CDP Disable created by Ansible"
+           adminSt: disabled

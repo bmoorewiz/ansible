@@ -1,0 +1,253 @@
+!Command: show running-config
+!Time: Thu Sep 27 16:08:32 2018
+
+version 7.0(3)I7(2)
+hostname Dist1
+vdc Dist1 id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+cfs eth distribute
+feature eigrp
+feature interface-vlan
+feature hsrp
+feature vpc
+
+no password strength-check
+username ******** password 5 $5$BKGBDF$sLjVmeCxMK/mbAVVBswTDR.TYJh29SvjUZchS2gwTm9  role network-********
+ip domain-lookup
+snmp-server user ******** network-******** auth md5 0xaab26e99f431f9081188f7de92e44884 priv 0xaab26e99f431f9081188f7de92e44884 localizedkey
+rmon event 1 description FATAL(1) owner PMON@FATAL
+rmon event 2 description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 description ERROR(3) owner PMON@ERROR
+rmon event 4 description WARNING(4) owner PMON@WARNING
+rmon event 5 description INFORMATION(5) owner PMON@INFO
+snmp-server community test group network-********
+
+vlan 1,101-102,110
+vlan 101
+  name VLAN_101
+vlan 102
+  name VLAN_102
+
+vrf context PKL
+vrf context management
+  ip route 0.0.0.0/0 10.207.86.1
+vpc domain 1
+  peer-switch
+  peer-keepalive destination 192.168.254.2 source 192.168.254.1 vrf PKL
+  peer-gateway
+
+interface Vlan1
+  no ip redirects
+  no ipv6 redirects
+
+interface Vlan101
+  description Access1 Network
+  no shutdown
+  no ip redirects
+  ip address 10.1.101.2/24
+  no ipv6 redirects
+  ip router eigrp 1
+  hsrp 101 
+    preempt 
+    priority 95
+    ip 10.1.101.1
+
+interface Vlan102
+  description Access2 Network
+  no shutdown
+  no ip redirects
+  ip address 10.1.102.2/24
+  no ipv6 redirects
+  ip router eigrp 1
+  hsrp 102 
+    preempt 
+    priority 95
+    ip 10.1.102.1
+
+interface port-channel10
+  description VPC Peer Link
+  switchport mode trunk
+  spanning-tree port type network
+  vpc peer-link
+
+interface port-channel101
+  switchport mode trunk
+  vpc 101
+
+interface port-channel102
+  description to-Access2
+  switchport mode trunk
+  vpc 102
+
+interface Ethernet1/1
+  description to-Core1
+  no switchport
+  ip address 10.0.0.6/30
+  ip router eigrp 1
+  no shutdown
+
+interface Ethernet1/2
+  description to-Dist2
+  switchport mode trunk
+  channel-group 10
+
+interface Ethernet1/3
+  description to-Dist2
+  switchport mode trunk
+  channel-group 10
+
+interface Ethernet1/4
+  no switchport
+  vrf member PKL
+  ip address 192.168.254.1/30
+  no shutdown
+
+interface Ethernet1/5
+  description to-Core2
+  no switchport
+  ip address 10.0.0.14/30
+  ip router eigrp 1
+  no shutdown
+
+interface Ethernet1/6
+  description to-Dist2
+  no switchport
+  ip address 10.0.0.21/30
+  ip router eigrp 1
+  no shutdown
+
+interface Ethernet1/7
+  description to-Access1
+  switchport mode trunk
+  channel-group 101
+
+interface Ethernet1/8
+  description to-Access2
+  switchport mode trunk
+  channel-group 102
+
+interface Ethernet1/9
+
+interface Ethernet1/10
+
+interface Ethernet1/11
+
+interface Ethernet1/12
+
+interface Ethernet1/13
+
+interface Ethernet1/14
+
+interface Ethernet1/15
+
+interface Ethernet1/16
+
+interface Ethernet1/17
+
+interface Ethernet1/18
+
+interface Ethernet1/19
+
+interface Ethernet1/20
+
+interface Ethernet1/21
+
+interface Ethernet1/22
+
+interface Ethernet1/23
+
+interface Ethernet1/24
+
+interface Ethernet1/25
+
+interface Ethernet1/26
+
+interface Ethernet1/27
+
+interface Ethernet1/28
+
+interface Ethernet1/29
+
+interface Ethernet1/30
+
+interface Ethernet1/31
+
+interface Ethernet1/32
+
+interface Ethernet1/33
+
+interface Ethernet1/34
+
+interface Ethernet1/35
+
+interface Ethernet1/36
+
+interface Ethernet1/37
+
+interface Ethernet1/38
+
+interface Ethernet1/39
+
+interface Ethernet1/40
+
+interface Ethernet1/41
+
+interface Ethernet1/42
+
+interface Ethernet1/43
+
+interface Ethernet1/44
+
+interface Ethernet1/45
+
+interface Ethernet1/46
+
+interface Ethernet1/47
+
+interface Ethernet1/48
+
+interface Ethernet1/49
+
+interface Ethernet1/50
+
+interface Ethernet1/51
+
+interface Ethernet1/52
+
+interface Ethernet1/53
+
+interface Ethernet1/54
+
+interface Ethernet1/55
+
+interface Ethernet1/56
+
+interface Ethernet1/57
+
+interface Ethernet1/58
+
+interface Ethernet1/59
+
+interface Ethernet1/60
+
+interface Ethernet1/61
+
+interface Ethernet1/62
+
+interface Ethernet1/63
+
+interface Ethernet1/64
+
+interface mgmt0
+  vrf member management
+  ip address 10.207.86.33/24
+line console
+line vty
+router eigrp 1

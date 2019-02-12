@@ -1,0 +1,19 @@
+---
+- hosts: activedirectory
+  vars_prompt:
+    - name: "admin_user"
+      prompt: "Administrator Username"
+      private: no
+    - name: "admin_password"
+      prompt: "Administrator Password"
+      private: yes
+    - name: "new_user"
+      prompt: "Username"
+      private: no
+    - name: "new_user_password"
+      prompt: "Password"
+      private: yes
+  gather_facts: no
+  connection: local
+  roles:
+    - vpn_user_add

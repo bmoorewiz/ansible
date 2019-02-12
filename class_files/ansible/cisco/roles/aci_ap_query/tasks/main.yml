@@ -1,0 +1,20 @@
+
+- name: Query an Application Profile
+  aci_ap:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_name }}"
+    ap: "{{ ap_name }}"
+    state: query
+    validate_certs: no 
+  delegate_to: localhost
+  register: query_results
+
+# - debug:
+#     var: query_results
+
+- debug:
+    msg:  "{{ query_results }}"
+- set_fact:
+    name_id: "{{ query_results | json_query('fvAp[*].name') }}"

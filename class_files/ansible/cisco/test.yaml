@@ -1,0 +1,19 @@
+---
+- hosts: apic
+  connection: local
+  tasks:
+   - name: tenant query
+     aci_tenant:
+       hostname: 10.207.10.100
+       username: admin
+       password: D@talink1
+       state: query
+       validate_certs: no
+     register: output
+
+   - name: Create a list of Tenants
+     set_fact:
+       tenants: "{{ output | json_query('existing[*].fvTenant') }}"
+
+   - debug: var=tenants
+#   - debug: output.stdout_lines
