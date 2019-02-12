@@ -1,0 +1,8 @@
+---
+#variables for nxos_vlan_add
+
+vlan_id_1: 105
+vlan_name_1: VLAN_105
+
+vlan_id_2: 106
+vlan_name_2: VLAN_106

@@ -1,0 +1,30 @@
+---
+#- hosts: localhost
+#  connection: local
+#  roles:
+#    - known_hosts
+
+- hosts: apic
+  vars_prompt:
+    - name: "user"
+      prompt: "Username"
+      private: no
+    - name: "password"
+      prompt: "Password"
+      private: yes
+    - name: "tenant_name"
+      prompt: "Which tenant will the End Point Group be located in"
+      private: no
+    - name: "ap"
+      prompt: "Which Application Profile will the EPG be placed"  
+      private: no
+    - name: "epg_name"
+      prompt: "What is the name of the new EPG"
+      private: no
+    - name: "bd_name"
+      prompt: "What is the name of the Bridge Domain"
+      private: no
+  gather_facts: no
+  connection: local
+  roles:
+    - aci_epg_add

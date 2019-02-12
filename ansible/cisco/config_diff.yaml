@@ -1,0 +1,14 @@
+---
+#- hosts: localhost
+#  connection: local
+#  roles:
+#    - known_hosts
+
+- hosts: dist1
+  gather_facts: no
+  connection: local
+  roles:
+    - config_diff
+#  register: output
+#- debug: msg="{{ output.stdout }}"
+#- debug: msg="{{ output.stderr }}"

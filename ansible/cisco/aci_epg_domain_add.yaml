@@ -1,0 +1,30 @@
+---
+#- hosts: localhost
+#  connection: local
+#  roles:
+#    - known_hosts
+
+- hosts: apic
+  vars_prompt:
+    - name: "user"
+      prompt: "Username"
+      private: no
+    - name: "password"
+      prompt: "Password"
+      private: yes
+    - name: "tenant_name"
+      prompt: "Which tenant is the EPG located in"
+      private: no
+    - name: "ap_name"
+      prompt: "Which Application Profile"
+      private: no
+    - name: "epg_name"
+      prompt: "Which EPG"
+      private: no
+    - name: "domain_name"
+      prompt: "which Physical Domain will you be binding to"
+      private: no
+  gather_facts: no
+  connection: local
+  roles:
+    - aci_epg_domain_add

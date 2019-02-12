@@ -1,0 +1,22 @@
+- name: Add a new Bridge Domain
+  aci_bd:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: JTC
+    bd: "VLAN_{{ vlan_number }}"
+    vrf: Prod_VRF
+    validate_certs: no
+    state: present
+
+- name: Add Subnet to Bridge Domain
+  aci_bd_subnet:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: JTC
+    bd: "VLAN_{{ vlan_number }}"
+    gateway: "{{ gateway }}"
+    mask: "{{ mask }}"
+    validate_certs: no
+    scope: public

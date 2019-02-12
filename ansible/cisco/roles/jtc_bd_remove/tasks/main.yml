@@ -1,0 +1,9 @@
+- name: Remove Bridge Domain
+  aci_bd:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: JTC
+    bd: "VLAN_{{ vlan_number }}"
+    validate_certs: no
+    state: absent

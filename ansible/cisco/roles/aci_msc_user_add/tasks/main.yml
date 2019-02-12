@@ -1,0 +1,17 @@
+- uri:
+    url: "http://198.18.135.70"
+    method: POST
+    body: {
+ "username": "user1",
+ "password": "Cisco@123!",
+ "firstName": "Foo",
+ "lastName": "Bar",
+ "emailAddress": "noreply@cisco.com",
+ "phoneNumber": "408-527-0000",
+ "accountStatus": "active",
+  "roles": [
+    {
+      "roleId": "591f5903220000f106fa80b6"
+    }
+  ]
+}  

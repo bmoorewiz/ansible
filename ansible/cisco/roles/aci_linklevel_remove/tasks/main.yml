@@ -1,0 +1,55 @@
+- name: Remove 10G Link Level Policies
+  aci_rest:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    validate_certs: no
+    path: /api/mo/uni/infra.json
+    method: post
+    content:
+      fabricHIfPol:
+        attributes:
+          name: ANS_10G_Auto
+          status: deleted
+
+- name: Remove 1G Link Level Policies
+  aci_rest:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    validate_certs: no
+    path: /api/mo/uni/infra.json
+    method: post
+    content:
+      fabricHIfPol:
+        attributes:
+          name: ANS_1G_Auto
+          status: deleted
+
+- name: Remove 40G Link Level Policies
+  aci_rest:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    validate_certs: no
+    path: /api/mo/uni/infra.json
+    method: post
+    content:
+      fabricHIfPol:
+        attributes:
+          name: ANS_40G_Auto
+          status: deleted
+
+- name: Remove 25G Link Level Policies
+  aci_rest:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    validate_certs: no
+    path: /api/mo/uni/infra.json
+    method: post
+    content:
+      fabricHIfPol:
+        attributes:
+          name: ANS_25G_Auto
+          status: deleted

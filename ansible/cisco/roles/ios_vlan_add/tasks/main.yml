@@ -1,0 +1,14 @@
+- name: create vlan
+  ios_config:
+    lines: 
+      - vlan {{ vlan_id }}
+    username: admin
+    password: admin
+
+- name: Configure VLAN Name
+  ios_config:
+    lines:
+      - name VLAN_{{ vlan_id }}
+    parents: vlan {{ vlan_id }}
+    username: admin
+    password: admin

@@ -1,0 +1,10 @@
+
+- name: Removing Local User
+  aci_aaa_user:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    aaa_user: "{{ new_user }}"
+    state: absent
+    validate_certs: no 
+#  delegate_to: localhost

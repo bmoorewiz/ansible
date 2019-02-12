@@ -1,0 +1,29 @@
+- name: Add a new ProvidedContract
+  aci_epg_to_contract:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: JTC
+    ap: jtc_vlans
+    epg: "VLAN_{{ vlan_number }}"
+    contract: permit_any
+    contract_type: provider
+    state: present
+    validate_certs: no 
+#  delegate_to: localhost
+
+
+- name: Add a new Consumed Contract
+  aci_epg_to_contract:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: JTC
+    ap: jtc_vlans
+    epg: "VLAN_{{ vlan_number }}"
+    contract: permit_any
+    contract_type: consumer
+    state: present
+    validate_certs: no
+#  delegate_to: localhost
+

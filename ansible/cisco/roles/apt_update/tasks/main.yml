@@ -1,0 +1,4 @@
+- name: upgrade cache and update repos
+  apt:
+    upgrade: yes
+    update_cache: yes

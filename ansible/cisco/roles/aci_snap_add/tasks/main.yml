@@ -1,0 +1,11 @@
+
+- name: Create a Config Snapshot
+  aci_config_snapshot:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    export_policy: config_backup
+    description: "{{ snap_description }}"
+    state: present
+    validate_certs: no 
+#  delegate_to: localhost

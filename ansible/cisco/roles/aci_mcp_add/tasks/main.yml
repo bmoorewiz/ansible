@@ -1,0 +1,10 @@
+- name: Add MCP Policy
+  aci_interface_policy_mcp:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    mcp: ANS_MCP_Enable
+    description: "MCP Enabled by Ansible"
+    admin_state: yes
+    validate_certs: no
+    state: present

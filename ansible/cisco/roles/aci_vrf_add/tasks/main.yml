@@ -1,0 +1,12 @@
+- name: Add a new VRF
+  aci_vrf:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_name }}"
+    vrf: "{{ vrf_name }}"
+    description: "{{ tenant_name }} prod vrf"
+    validate_certs: no
+    policy_control_preference: enforced
+    policy_control_direction: ingress
+    state: present

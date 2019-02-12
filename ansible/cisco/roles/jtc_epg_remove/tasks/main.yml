@@ -1,0 +1,12 @@
+- name: Remove EPG
+  aci_epg:
+    hostname: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: JTC
+    ap: jtc_vlans
+    epg: "VLAN_{{ vlan_number }}"
+    bd: "VLAN_{{ vlan_number }}"
+    state: absent
+    validate_certs: no 
+#  delegate_to: localhost

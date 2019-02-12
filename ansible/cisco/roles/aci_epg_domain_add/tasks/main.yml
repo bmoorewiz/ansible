@@ -1,0 +1,12 @@
+- name: Add a new Physical domain to EPG Binding
+  aci_epg_to_domain:
+    host: 10.207.10.100
+    username: "{{ user }}"
+    password: "{{ password }}"
+    tenant: "{{ tenant_name }}"
+    ap: "{{ ap_name }}"
+    epg: "{{epg_name }}"
+    domain: "{{ domain_name }}"
+    domain_type: phys
+    validate_certs: no
+    state: present

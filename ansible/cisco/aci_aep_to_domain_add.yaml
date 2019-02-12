@@ -1,0 +1,18 @@
+---
+#- hosts: localhost
+#  connection: local
+#  roles:
+#    - known_hosts
+
+- hosts: apic
+  vars_prompt:
+    - name: "user"
+      prompt: "Username"
+      private: no
+    - name: "password"
+      prompt: "Password"
+      private: yes
+  gather_facts: no
+  connection: local
+  roles:
+    - aci_aep_to_domain_add
